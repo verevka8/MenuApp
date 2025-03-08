@@ -1,0 +1,47 @@
+[versions]
+agp = "8.5.2"
+gson = "2.10.1"
+javaWebsocket = "1.5.2"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+lifecycleViewmodel = "2.6.2"
+material = "1.12.0"
+activity = "1.9.3"
+constraintlayout = "2.1.4"
+navigationFragment = "1.0.0"
+navigationFragmentVersion = "2.8.8"
+picasso = "2.5.2"
+picassoVersion = "2.8"
+retrofit = "2.5.0"
+rxandroid = "2.1.1"
+rxjava = "2.2.21"
+stompprotocolandroid = "1.6.6"
+
+[libraries]
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationFragmentVersion" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationFragmentVersion" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+java-websocket = { module = "org.java-websocket:Java-WebSocket", version.ref = "javaWebsocket" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewmodel" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+navigation-fragment = { module = "android.arch.navigation:navigation-fragment", version.ref = "navigationFragment" }
+navigation-ui = { module = "android.arch.navigation:navigation-ui", version.ref = "navigationFragment" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+picasso-v28 = { module = "com.squareup.picasso:picasso", version.ref = "picassoVersion" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
+stompprotocolandroid = { module = "com.github.NaikSoftware:StompProtocolAndroid", version.ref = "stompprotocolandroid" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
