@@ -21,6 +21,14 @@ public class Dish {
         this.price = price;
     }
 
+    public Dish(Dish dish){
+        this.id = dish.id;
+        this.user = dish.user;
+        this.name = dish.name;
+        this.urlOfDishImage = dish.urlOfDishImage;
+        this.price = dish.price;
+    }
+
     public String getName() {
         return name;
     }

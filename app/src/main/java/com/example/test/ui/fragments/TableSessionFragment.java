@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.test.data.model.Dish;
 import com.example.test.data.model.SessionDish;
 import com.example.test.databinding.FragmentTableSessionBinding;
 import com.example.test.ui.recycler_view_adapter.UserAdapter;
@@ -35,8 +36,8 @@ public class TableSessionFragment extends Fragment {
         viewModel = new TablesSessionViewModel(getArguments().getString(SESSION_ID));
         binding = FragmentTableSessionBinding.inflate(inflater,container,false);
 
-        binding.rvUsers.setLayoutManager(new LinearLayoutManager(getContext()));
-        userAdapter = new UserAdapter(viewModel.getDishes().getValue());
+        binding.rvUsers.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        userAdapter = new UserAdapter(viewModel.getDishes().getValue(),this::dishClicked);
 
 
         binding.rvUsers.setAdapter(userAdapter);
@@ -50,10 +51,15 @@ public class TableSessionFragment extends Fragment {
         });
 
         viewModel.getDishes().observe(getViewLifecycleOwner(), sessionDish -> {
-           // обновление рекуклера
+            userAdapter.updateRecyclerView(sessionDish);
         });
 
 
         return binding.getRoot();
+    }
+
+    private void dishClicked(Dish dish){
+        DishDetailsFragment fragment = new DishDetailsFragment(dish,viewModel::AddDish);
+        fragment.show(getChildFragmentManager(),fragment.getTag());
     }
 }

@@ -5,9 +5,9 @@ public class Order {
     private String idOfFood;
     private String user;
 
-    public Order(String idOfFood, String dish) {
+    public Order(String idOfFood, String user) {
         this.idOfFood = idOfFood;
-        this.user = dish;
+        this.user = user;
     }
 
     public String getIdOfFood() {

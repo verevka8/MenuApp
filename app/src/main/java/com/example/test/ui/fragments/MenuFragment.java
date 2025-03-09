@@ -33,7 +33,7 @@ public class MenuFragment extends BottomSheetDialogFragment {
 
         binding = FragmentMenuBinding.inflate(inflater,container,false);
         binding.rvMenuItems.setLayoutManager(new GridLayoutManager(getContext(),2));
-        menuAdapter = new MenuAdapter(viewModel.getMenu(),this::AddDish);
+        menuAdapter = new MenuAdapter(viewModel.getMenu(),this::AddDish, this::displayDishDetails);
         binding.rvMenuItems.setAdapter(menuAdapter);
 
         return binding.getRoot();
@@ -43,5 +43,8 @@ public class MenuFragment extends BottomSheetDialogFragment {
         viewModel.AddDish(dish);
         dismiss();
     }
-
+    public void displayDishDetails(Dish dish){
+        DishDetailsFragment fragment = new DishDetailsFragment(dish,this::AddDish);
+        fragment.show(getChildFragmentManager(), fragment.getTag());
+    }
 }

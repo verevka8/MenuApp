@@ -36,7 +36,7 @@ public class TablesSessionViewModel extends ViewModel {
     }
 
     public void AddDish(Dish dish){
-        Order newOrder = new Order(dish.getId(),dish.getName());
+        Order newOrder = new Order(dish.getId(),dish.getUser());
         sessionRepository.sendOrder(newOrder); // преобразуем в более легковестный обьект TODO: мб сделать на уровне репозитория
     }
 
