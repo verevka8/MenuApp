@@ -33,7 +33,7 @@ public class WebSocketClient {
         client = Stomp.over(Stomp.ConnectionProvider.JWS, BASE_URL);
         client.connect();
 
-        Disposable disposable = client.topic("/topic/session/" + sessionId).subscribe(topicMessage -> {
+        Disposable disposable = client.topic("/topic/session." + sessionId).subscribe(topicMessage -> {
             Log.d(TAG, "Received: " + topicMessage.getPayload());
             messageCallback.onMessageReceived(topicMessage.getPayload());
         }, throwable -> {

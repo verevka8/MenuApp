@@ -2,26 +2,21 @@ package com.example.test.ui.fragments;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.test.R;
 import com.example.test.data.model.Dish;
 import com.example.test.databinding.FragmentDishDetailsBinding;
-import com.example.test.databinding.FragmentMenuBinding;
 import com.example.test.ui.callbacks.DishClickCallback;
 import com.example.test.ui.recycler_view_adapter.DishCompositionAdapter;
-import com.example.test.ui.recycler_view_adapter.MenuAdapter;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.squareup.picasso.Picasso;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DishDetailsFragment extends BottomSheetDialogFragment {
