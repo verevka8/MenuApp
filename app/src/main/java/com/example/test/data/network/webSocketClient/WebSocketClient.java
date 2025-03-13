@@ -20,13 +20,15 @@ import ua.naiksoftware.stomp.dto.StompMessage;
 
 public class WebSocketClient {
     private StompClient client;
-    private WebSocketCallBack messageCallback;
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private final String username;
+    private final WebSocketCallBack messageCallback;
+    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     private final String TAG = "MyWebSockets";
 
-    public WebSocketClient(WebSocketCallBack messageCallback) {
+    public WebSocketClient(String username, WebSocketCallBack messageCallback) {
         this.messageCallback = messageCallback;
+        this.username = username;
     }
 
     public void connectToSession(String sessionId){
@@ -63,6 +65,7 @@ public class WebSocketClient {
         List<StompHeader> headers = new ArrayList<>();
         headers.add(new StompHeader(StompHeader.DESTINATION,destination));
         headers.add(new StompHeader("sessionId",sessionId));
+        headers.add(new StompHeader("username",username));
         StompMessage stompMessage = new StompMessage(StompCommand.SEND, headers,message);
         client.send(stompMessage).subscribe(() -> {
             Log.d(TAG, "Message sent successfully");

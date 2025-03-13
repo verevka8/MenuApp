@@ -17,6 +17,40 @@
         android:text="Создать сессию"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
+
+    <EditText
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:hint="Введите юзернейм:"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/tvIdSession"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tvIdSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="31dp"
+        android:ems="10"
+        android:hint="Введите id сессии:"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/createSession"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 </androidx.constraintlayout.widget.ConstraintLayout>

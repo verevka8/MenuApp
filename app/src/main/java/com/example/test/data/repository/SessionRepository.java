@@ -30,11 +30,11 @@ public class SessionRepository {
     private DishMapper dishMapper;
     private final DishCallback callback;
 
-    public SessionRepository(String sessionId, DishCallback callback){
+    public SessionRepository(String sessionId, String username, DishCallback callback){
         this.sessionId = sessionId;
         this.callback = callback;
         apiRequests = RetrofitService.getInstance().getApiService();
-        client = new WebSocketClient(this::onMessageReceived);
+        client = new WebSocketClient(username,this::onMessageReceived);
         client.connectToSession(sessionId);
     }
 

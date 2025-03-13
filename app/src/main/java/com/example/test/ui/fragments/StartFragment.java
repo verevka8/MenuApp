@@ -29,7 +29,8 @@ public class StartFragment extends Fragment {
 
         binding.createSession.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("sessionId", "1234");
+            bundle.putString("sessionId", String.valueOf(binding.tvIdSession.getText()));
+            bundle.putString("username",String.valueOf(binding.tvUsername.getText()));
             Navigation.findNavController(requireView()).navigate(R.id.action_startFragment_to_tableSessionFragment,bundle);
         });
 

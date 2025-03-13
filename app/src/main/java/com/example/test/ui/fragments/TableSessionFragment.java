@@ -22,6 +22,7 @@ public class TableSessionFragment extends Fragment {
     private UserAdapter userAdapter;
     private TablesSessionViewModel viewModel;
     private static final String SESSION_ID = "sessionId";
+    private static final String USERNAME = "username";
 
     @Nullable
     @Override
@@ -31,7 +32,7 @@ public class TableSessionFragment extends Fragment {
         if (getArguments() == null){
             throw new IllegalArgumentException();
         }
-        viewModel = new TablesSessionViewModel(getArguments().getString(SESSION_ID));
+        viewModel = new TablesSessionViewModel(getArguments().getString(SESSION_ID),getArguments().getString(USERNAME));
         binding = FragmentTableSessionBinding.inflate(inflater,container,false);
 
         binding.rvUsers.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));

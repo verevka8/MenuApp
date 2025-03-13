@@ -20,8 +20,8 @@ public class TablesSessionViewModel extends ViewModel {
 
     private final SessionRepository sessionRepository;
 
-    public TablesSessionViewModel(String sessionId){
-        sessionRepository = new SessionRepository(sessionId,this::sessionUpdates);
+    public TablesSessionViewModel(String sessionId,String username){
+        sessionRepository = new SessionRepository(sessionId, username, this::sessionUpdates);
         InitializeData();
     }
 
