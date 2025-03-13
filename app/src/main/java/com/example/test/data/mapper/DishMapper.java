@@ -42,10 +42,10 @@ public class DishMapper {
 
     private Dish findDishById(String id){
         for (int i = 0; i < menu.size();i++){
-            if (menu.get(i).getId().equals(id)){
+            if (menu.get(i).getIdDishes().equals(id)){
                 return menu.get(i);
             }
         }
-        throw new IllegalArgumentException("Блюдо с таким айди не найдено"); //TODO: что с исключением делать
+        throw new IllegalArgumentException("Блюдо с таким айди не найдено"); //TODO: проработать исключение
     }
 }

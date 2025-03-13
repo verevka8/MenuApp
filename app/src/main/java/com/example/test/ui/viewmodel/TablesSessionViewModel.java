@@ -1,7 +1,5 @@
 package com.example.test.ui.viewmodel;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -36,7 +34,7 @@ public class TablesSessionViewModel extends ViewModel {
     }
 
     public void AddDish(Dish dish){
-        Order newOrder = new Order(dish.getId(),dish.getUser());
+        Order newOrder = new Order(dish.getIdDishes(),dish.getUser());
         sessionRepository.sendOrder(newOrder); // преобразуем в более легковестный обьект TODO: мб сделать на уровне репозитория
     }
 

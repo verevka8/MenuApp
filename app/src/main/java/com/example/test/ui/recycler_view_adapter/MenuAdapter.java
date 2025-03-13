@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.test.R;
 import com.example.test.data.model.Dish;
 import com.example.test.ui.callbacks.DishClickCallback;
+import com.example.test.R;
 import com.squareup.picasso.Picasso;
 
 import java.text.MessageFormat;
@@ -65,9 +65,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         }
 
         public void bind(Dish dish, DishClickCallback addFromMenuCallback, DishClickCallback displayDetailsCallback) {
-            tvDishName.setText(dish.getName());
+            tvDishName.setText(dish.getDishes());
             tvDishPrice.setText(MessageFormat.format("{0} руб.", dish.getPrice()));
-            Picasso.get().load(dish.getUrlOfDishImage()).into(ivDishImage);
+            Picasso.get().load("https://storage.yandexcloud.net/menu-app-image-backet/" + dish.getIdDishes() + ".jpg").into(ivDishImage);
             btnAddDish.setOnClickListener(view -> {
                 addFromMenuCallback.dishClicked(dish);
             });

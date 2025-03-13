@@ -9,14 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.test.R;
 import com.example.test.data.model.Dish;
-import com.example.test.data.model.Order;
 import com.example.test.ui.callbacks.DishClickCallback;
-import com.example.test.ui.fragments.DishDetailsFragment;
+import com.example.test.R;
 import com.squareup.picasso.Picasso;
 
-import java.util.IdentityHashMap;
 import java.util.List;
 
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewHolder> {
@@ -64,8 +61,8 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
         }
 
         public void bind(Dish dish, DishClickCallback callback) {
-            tvDishName.setText(dish.getName());
-            Picasso.get().load(dish.getUrlOfDishImage()).into(ivDishImage);
+            tvDishName.setText(dish.getDishes());
+            Picasso.get().load("https://storage.yandexcloud.net/menu-app-image-backet/" + dish.getIdDishes() + ".jpg").into(ivDishImage);
             ivDishImage.setOnClickListener(view -> {
                 callback.dishClicked(dish);
             });

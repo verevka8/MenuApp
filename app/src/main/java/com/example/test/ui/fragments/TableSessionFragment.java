@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -13,10 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.test.data.model.Dish;
-import com.example.test.data.model.SessionDish;
-import com.example.test.databinding.FragmentTableSessionBinding;
 import com.example.test.ui.recycler_view_adapter.UserAdapter;
 import com.example.test.ui.viewmodel.TablesSessionViewModel;
+import com.example.test.databinding.FragmentTableSessionBinding;
 
 public class TableSessionFragment extends Fragment {
 

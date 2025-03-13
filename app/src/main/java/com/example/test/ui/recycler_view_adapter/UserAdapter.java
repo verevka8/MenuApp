@@ -1,6 +1,5 @@
 package com.example.test.ui.recycler_view_adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.test.R;
+
 import com.example.test.data.model.Dish;
-import com.example.test.data.model.Order;
 import com.example.test.data.model.SessionDish;
-import com.example.test.data.model.SessionOrders;
 import com.example.test.ui.callbacks.DishClickCallback;
+import com.example.test.R;
 
 import java.util.ArrayList;
 import java.util.List;

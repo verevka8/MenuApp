@@ -2,9 +2,6 @@ package com.example.test.ui.fragments;
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
@@ -12,10 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.test.data.model.Dish;
-import com.example.test.databinding.FragmentMenuBinding;
 import com.example.test.ui.recycler_view_adapter.MenuAdapter;
 import com.example.test.ui.viewmodel.TablesSessionViewModel;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.example.test.databinding.FragmentMenuBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
